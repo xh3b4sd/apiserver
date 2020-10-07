@@ -35,3 +35,4 @@ jobs:
         with:
           push: true
           tags: ${{ github.repository }}:${{ github.sha }}
+          buildkitd-flags: --debug
