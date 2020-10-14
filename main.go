@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"net"
+	"time"
 
 	"github.com/xh3b4sd/tracer"
 	"google.golang.org/grpc"
@@ -54,21 +55,21 @@ type API struct {
 }
 
 func (a *API) Create(ctx context.Context, cre *post.CreateI) (*post.CreateO, error) {
-	fmt.Printf("%#v\n", cre)
+	fmt.Printf("%#v\n", time.Now().String())
 	return &post.CreateO{Message: "create output"}, nil
 }
 
 func (a *API) Delete(ctx context.Context, del *post.DeleteI) (*post.DeleteO, error) {
-	fmt.Printf("%#v\n", del)
+	fmt.Printf("%#v\n", time.Now().String())
 	return &post.DeleteO{Message: "delete output"}, nil
 }
 
 func (a *API) Search(ctx context.Context, sea *post.SearchI) (*post.SearchO, error) {
-	fmt.Printf("%#v\n", sea)
+	fmt.Printf("%#v\n", time.Now().String())
 	return &post.SearchO{Message: "search output"}, nil
 }
 
 func (a *API) Update(ctx context.Context, upd *post.UpdateI) (*post.UpdateO, error) {
-	fmt.Printf("%#v\n", upd)
+	fmt.Printf("%#v\n", time.Now().String())
 	return &post.UpdateO{Message: "update output"}, nil
 }
