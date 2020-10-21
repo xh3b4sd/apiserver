@@ -5,6 +5,9 @@ metadata:
 spec:
   dnsNames:
     - "kia01.xh3b4sd.giantswarm.io"
+  duration: "2160h"
   issuerRef:
+    kind: "ClusterIssuer"
     name: "letsencrypt-demo"
+  renewBefore: "360h"
   secretName: "ingressgateway"
