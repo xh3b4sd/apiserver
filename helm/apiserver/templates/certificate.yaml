@@ -1,0 +1,10 @@
+apiVersion: "cert-manager.io/v1"
+kind: "Certificate"
+metadata:
+  name: "kia01.xh3b4sd.giantswarm.io"
+spec:
+  dnsNames:
+    - "kia01.xh3b4sd.giantswarm.io"
+  issuerRef:
+    name: "letsencrypt-demo"
+  secretName: "ingressgateway"

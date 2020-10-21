@@ -6,12 +6,12 @@ metadata:
     app.kubernetes.io/name: "{{ .Release.Name }}"
 spec:
   hosts:
-  - "kia01.xh3b4sd.giantswarm.io"
+    - "kia01.xh3b4sd.giantswarm.io"
   gateways:
-  - "{{ .Release.Name }}"
+    - "{{ .Release.Name }}"
   http:
-  - route:
-    - destination:
-        host: "{{ .Release.Name }}"
-        port:
-          number: {{ .Values.port }}
+    - route:
+      - destination:
+          host: "{{ .Release.Name }}"
+          port:
+            number: {{ .Values.port }}

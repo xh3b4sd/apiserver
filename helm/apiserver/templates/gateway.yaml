@@ -8,9 +8,12 @@ spec:
   selector:
     istio: "ingressgateway"
   servers:
-  - port:
-      name: "grpc"
-      number: {{ .Values.port }}
-      protocol: "GRPC"
-    hosts:
-    - "kia01.xh3b4sd.giantswarm.io"
+    - port:
+        name: "grpc"
+        number: 443
+        protocol: "GRPC"
+      hosts:
+        - "kia01.xh3b4sd.giantswarm.io"
+      tls:
+        mode: "SIMPLE"
+        credentialName: "ingressgateway"
