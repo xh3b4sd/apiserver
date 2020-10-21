@@ -1,0 +1,6 @@
+port: 7777
+image:
+  registry: "ghcr.io"
+  organization: "xh3b4sd"
+  repository: "apiserver"
+  tag: "595d90cfc171e22a16c16f6c47ff824b74c4875b"
