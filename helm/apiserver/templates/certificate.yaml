@@ -1,10 +1,10 @@
 apiVersion: "cert-manager.io/v1"
 kind: "Certificate"
 metadata:
-  name: "kia01.xh3b4sd.giantswarm.io"
+  name: "kia01.aws.venturemark.co"
 spec:
   dnsNames:
-    - "kia01.xh3b4sd.giantswarm.io"
+    - "kia01.aws.venturemark.co"
   duration: "2160h"
   issuerRef:
     kind: "ClusterIssuer"

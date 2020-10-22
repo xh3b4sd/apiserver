@@ -11,9 +11,9 @@ spec:
     - port:
         name: "grpc"
         number: 443
-        protocol: "GRPC"
+        protocol: "HTTPS"
       hosts:
-        - "kia01.xh3b4sd.giantswarm.io"
+        - "kia01.aws.venturemark.co"
       tls:
         mode: "SIMPLE"
         credentialName: "ingressgateway"

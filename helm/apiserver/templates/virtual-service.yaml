@@ -6,7 +6,7 @@ metadata:
     app.kubernetes.io/name: "{{ .Release.Name }}"
 spec:
   hosts:
-    - "kia01.xh3b4sd.giantswarm.io"
+    - "kia01.aws.venturemark.co"
   gateways:
     - "{{ .Release.Name }}"
   http:
