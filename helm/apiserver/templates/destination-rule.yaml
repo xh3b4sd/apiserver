@@ -6,8 +6,7 @@ metadata:
     app.kubernetes.io/name: "{{ .Release.Name }}"
 spec:
   # In order to be most specific and prevent routing towards the wrong
-  # destination we apply the exact representation of the local DNS record. The
-  # same applies to the virtual service host configuration.
+  # destination we apply the exact representation of the local DNS record.
   #
   #     apiserver.infra.svc.cluster.local
   #
