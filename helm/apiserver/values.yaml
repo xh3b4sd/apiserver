@@ -1,9 +1,9 @@
 port: 7777
 cluster:
   domain: "aws.venturemark.co"
-  name: "kia01"
+  name: "kia02"
 image:
   registry: "ghcr.io"
   organization: "xh3b4sd"
   repository: "apiserver"
-  tag: "595d90cfc171e22a16c16f6c47ff824b74c4875b"
+  tag: "e2ad6b50c5461f83039764786c45112349877ad3"
