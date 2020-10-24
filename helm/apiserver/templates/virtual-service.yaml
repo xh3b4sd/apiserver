@@ -6,7 +6,7 @@ metadata:
     app.kubernetes.io/name: "{{ .Release.Name }}"
 spec:
   hosts:
-    - "kia01.aws.venturemark.co"
+    - "{{ .Release.Name }}.{{ .Release.Namespace }}.svc.cluster.local"
   gateways:
     - "{{ .Release.Name }}"
   http:

@@ -1,4 +1,7 @@
 port: 7777
+cluster:
+  domain: "aws.venturemark.co"
+  name: "kia01"
 image:
   registry: "ghcr.io"
   organization: "xh3b4sd"
