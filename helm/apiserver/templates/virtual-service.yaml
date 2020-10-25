@@ -14,7 +14,7 @@ spec:
     #
     - "{{ .Release.Name }}.{{ .Values.cluster.name }}.{{ .Values.cluster.zone }}"
   gateways:
-    - "istio-system/istio-asset"
+    - "istio-system/ingressgateway"
   http:
     - route:
       - destination:
