@@ -6,7 +6,13 @@ metadata:
     app.kubernetes.io/name: "{{ .Release.Name }}"
 spec:
   hosts:
-    - "{{ .Values.cluster.name }}.{{ .Values.cluster.domain }}"
+    # The istio ingress gateway forwards traffic based on wildcard expressions.
+    # In our virtual service here we define the specific subdomain of our micro
+    # service according to the cluster name and DNS zone.
+    #
+    #     apiserver.kia02.aws.example.com
+    #
+    - "{{ .Release.Name }}.{{ .Values.cluster.name }}.{{ .Values.cluster.zone }}"
   gateways:
     - "istio-system/istio-asset"
   http:
