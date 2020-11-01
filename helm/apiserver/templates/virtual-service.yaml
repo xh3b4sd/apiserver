@@ -6,13 +6,24 @@ metadata:
     app.kubernetes.io/name: "{{ .Release.Name }}"
 spec:
   hosts:
-    # The istio ingress gateway forwards traffic based on wildcard expressions.
-    # In our virtual service here we define the specific subdomain of our micro
-    # service according to the cluster name and DNS zone.
+    {{- if and ( .Values.cluster ) ( .Values.cluster.name ) ( .Values.cluster.zone ) }}
+    # In a remote setup using eks the istio ingress gateway forwards traffic
+    # based on wildcard expressions of a hosted zone. In our virtual service
+    # here we define the specific subdomain of our micro service according to
+    # the cluster name and DNS zone.
     #
     #     apiserver.kia02.aws.example.com
     #
     - "{{ .Release.Name }}.{{ .Values.cluster.name }}.{{ .Values.cluster.zone }}"
+    {{- else }}
+    # In a local setup using kind the istio ingress gateway forwards traffic
+    # based on wildcard expressions matching everything. In our virtual service
+    # here we define the local DNS record of the matching service.
+    #
+    #     apiserver.infra.svc.cluster.local
+    #
+    - "{{ .Release.Name }}.{{ .Release.Namespace }}.svc.cluster.local"
+    {{- end }}
   gateways:
     - "istio-system/ingressgateway"
   http:
