@@ -55,6 +55,19 @@ spec:
           - grpc-message
           - grpc-status
         maxAge: 1728s
+      match:
+        {{- if and ( .Values.cluster ) ( .Values.cluster.name ) ( .Values.cluster.zone ) }}
+        # In a remote setup using eks the istio ingress gateway forwards traffic
+        # based on wildcard expressions of a hosted zone. In our virtual service
+        # here thus can just match for the default HTTPS port.
+        - port: 443
+        {{- else }}
+        # In a local setup using kind the istio ingress gateway forwards traffic
+        # based on the port forwarding configured in the kind cluster. In our
+        # virtual service here we do match traffic based on this port in order
+        # to do proper routing when everything comes from localhost.
+        - port: 30003
+        {{- end }}
       route:
         - destination:
             host: "{{ .Release.Name }}"
