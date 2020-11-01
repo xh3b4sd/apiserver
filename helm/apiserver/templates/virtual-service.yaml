@@ -18,11 +18,8 @@ spec:
     {{- else }}
     # In a local setup using kind the istio ingress gateway forwards traffic
     # based on wildcard expressions matching everything. In our virtual service
-    # here we define the local DNS record of the matching service.
-    #
-    #     apiserver.infra.svc.cluster.local
-    #
-    - "{{ .Release.Name }}.{{ .Release.Namespace }}.svc.cluster.local"
+    # here we do the same and just accept traffic for any host.
+    - "*"
     {{- end }}
   gateways:
     - "istio-system/ingressgateway"

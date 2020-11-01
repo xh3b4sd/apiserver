@@ -6,4 +6,4 @@ image:
   registry: "ghcr.io"
   organization: "xh3b4sd"
   repository: "apiserver"
-  tag: "cf0d1e008dfbea408f0fde29f03fa5d2c67b7369"
+  tag: "326deae09425023c5fa5dd69fa2bf0d3a900fad4"
