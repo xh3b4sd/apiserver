@@ -5,7 +5,7 @@ https://github.com/xh3b4sd/kia this api server app can be deployed and used.
 
 
 
-### EKS
+### eks
 
 ```
 helm -n infra install apiserver ./helm/apiserver --set cluster.name=kia02 --set cluster.zone=aws.example.com
@@ -17,7 +17,7 @@ grpcurl apiserver.kia02.aws.example.com:443 post.API/Search
 
 
 
-### OSX
+### osx
 
 ```
 helm -n infra install apiserver ./helm/apiserver
